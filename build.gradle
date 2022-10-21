@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Ultreon/bubbles-gradle")
+            credentials {
+                username = rootProject.hasProperty("gpr.user") ? rootProject.property("gpr.user") : System.getenv("USERNAME")
+                password = rootProject.hasProperty("gpr.key") ? rootProject.property("gpr.key") : System.getenv("TOKEN")
+            }
+        }
+    }
+
+    dependencies {
+        classpath "com.ultreon:bubbles-gradle:0.1.0+2"
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: "com.ultreon.bubbles-gradle"
+
+group 'com.example'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+
+    implementation "com.ultreon:bubbles:0.1.0+21"
+}
+
+test {
+    useJUnitPlatform()
+}
