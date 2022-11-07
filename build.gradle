@@ -11,12 +11,14 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.ultreon:bubbles-gradle:0.1.0+2"
+        classpath "com.ultreon:bubbles-gradle:0.1.0+13"
     }
 }
 
 plugins {
     id 'java'
+    id 'java-library'
+    id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.6"
 }
 
 apply plugin: "com.ultreon.bubbles-gradle"
@@ -32,7 +34,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 
-    implementation "com.ultreon:bubbles:0.1.0+21"
+    implementation "com.ultreon:bubbles:0.1.0+33"
 }
 
 test {

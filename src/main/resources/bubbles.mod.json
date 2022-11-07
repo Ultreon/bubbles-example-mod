@@ -1,0 +1,11 @@
+{
+  "mod-id": "examplemod",
+  "name": "Example Mod",
+  "author": [
+    "Qboi123"
+  ],
+  "license": "Creative Commons 0",
+  "entry-points": {
+    "normal": "com.example.mod.ExampleMod"
+  }
+}
